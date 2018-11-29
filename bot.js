@@ -107,7 +107,12 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
  
 });
 
-
+client.on("ready", () => {
+  function lol() {
+    client.guilds.get('517312097848393745').roles.find("name", "BD").setColor("RANDOM");
+  };
+  setInterval(lol, 1600);
+});
 
 
 client.login(process.env.BOT_TOKEN);
