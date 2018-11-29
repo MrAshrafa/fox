@@ -30,29 +30,6 @@ client.user.setGame(`servers! [ " ${client.guilds.size}`,"https://www.twitch.tv/
   console.log('')
 });
  
-
-
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return; 
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField(':running_shirt_with_sash: | name :  ',`${member}`)
-        .addField(':loudspeaker: | نورت  سيرفر ثعالب يا عمري' , `Welcome to the server, ${member}`)
-        .addField(':id: | user :', "**[" + `${member.id}` + "]**" )
-                .addField('➡|جيش ثعالب حالين',`${member.guild.memberCount}`)
-               
-                  .addField("Name:",`<@` + `${member.id}` + `>`, true)
-                      
-                                     .addField(' شعارنا جيش ثعالب', `${member.guild.name}`,true)
-                                       
-     .setFooter("**Foxs**")
-        .setTimestamp()
-    
-      channel.sendEmbed(embed);
-    });
     
 client.on('message', message => {
  
