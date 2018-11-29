@@ -107,12 +107,20 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
  
 });
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('517312097848393745').roles.find("name", "BD").setColor("RANDOM");
-  };
-  setInterval(lol, 1600);
-});
+client.on('message', msg => {
+
+    if (msg.content == '$join') {
+        if (msg.member.voiceChannel) {
+
+     if (msg.member.voiceChannel.joinable) {
+         msg.member.voiceChannel.join().then(msg.react('white_check_mark'));
+     }
+    }
+}
+})
+client.on('ready', () => { //code bot not leave room voice //Bot Is Online
+    client.channels.get("517312097848393745").join(); //by : Toxic Codes
+    });
 
 
 client.login(process.env.BOT_TOKEN);
