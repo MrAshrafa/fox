@@ -200,12 +200,6 @@ client.on('message', message => {
         }
     });
 
-client.on("ready", () => {
-  function lol() {
-    client.guilds.get('517312097848393745').roles.find("name", "RD").setColor("RANDOM");
-  };
-  setInterval(lol, 1600);
-});
 
 client.on('message', message => {
     if (message.content.startsWith("=bot")) {
